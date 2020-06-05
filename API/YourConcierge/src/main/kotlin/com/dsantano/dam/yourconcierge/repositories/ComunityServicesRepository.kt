@@ -9,6 +9,9 @@ import java.util.*
 interface ComunityServicesRepository : JpaRepository<ComunityServices, UUID> {
 
     @Query("select c from ComunityServices c where c.user = :user")
-    fun findSericesByUser(user : User) : ComunityServices
+    fun findAllComunitySericesByUser(user : User) : ComunityServices
+
+    @Query("select c from ComunityServices c where c.user.id = :user.id")
+    fun findComunitySericesByUserId(id : UUID) : ComunityServices
 
 }
