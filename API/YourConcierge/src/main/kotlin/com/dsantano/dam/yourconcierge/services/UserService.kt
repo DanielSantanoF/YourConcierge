@@ -1,7 +1,7 @@
 package com.dsantano.dam.yourconcierge.services
 
 import com.dsantano.dam.yourconcierge.dtos.CreateUserDTO
-import com.dsantano.dam.yourconcierge.entities.User
+import com.dsantano.dam.yourconcierge.entities.MyUser
 import com.dsantano.dam.yourconcierge.repositories.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
@@ -13,22 +13,22 @@ class UserService(
         private val encoder: PasswordEncoder
 ) {
 
-    fun create(user : User): Optional<User> {
-        if (findByUsername(user.username).isPresent)
+    fun create(myUser : MyUser): Optional<MyUser> {
+        if (findByUsername(myUser.username).isPresent)
             return Optional.empty()
         return Optional.of(
-                repo.save(user.copy(
-                        password = encoder.encode(user.password)
+                repo.save(myUser.copy(
+                        password = encoder.encode(myUser.password)
                 ))
         )
     }
 
-    fun create(newUser : CreateUserDTO): Optional<User> {
+    fun create(newUser : CreateUserDTO): Optional<MyUser> {
         if (findByUsername(newUser.username).isPresent)
             return Optional.empty()
         return Optional.of(
                 with(newUser) {
-                    repo.save(User(username, encoder.encode(password), fullName, "USER"))
+                    repo.save(MyUser(username, encoder.encode(password), fullName, floor, number, "USER"))
                 }
 
         )

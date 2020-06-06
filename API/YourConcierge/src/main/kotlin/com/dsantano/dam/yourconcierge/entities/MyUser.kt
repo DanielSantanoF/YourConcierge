@@ -8,13 +8,19 @@ import javax.persistence.*
 import kotlin.collections.HashSet
 
 @Entity
-data class User(
+data class MyUser(
 
 
         @Column(nullable = false, unique = true)
         private var username: String,
+        @Column(name = "password")
         private var password: String,
+        @Column(name = "full_name")
         var fullName: String,
+        @Column(name = "floor")
+        var floor: String,
+        @Column(name = "number")
+        var number: String,
 
         @ElementCollection(fetch = FetchType.EAGER)
         val roles: MutableSet<String> = HashSet(),
@@ -29,8 +35,8 @@ data class User(
 
 ) : UserDetails {
 
-    constructor(username: String, password: String, fullName: String, role: String) :
-            this(username, password, fullName, mutableSetOf(role), true, true, true, true)
+    constructor(username: String, password: String, fullName: String, role: String, floor: String, number: String) :
+            this(username, password, fullName, floor, number, mutableSetOf(role), true, true, true, true)
 
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> =
             roles.map { SimpleGrantedAuthority("ROLE_$it") }.toMutableList()
@@ -45,7 +51,7 @@ data class User(
     override fun equals(other: Any?): Boolean {
         if (this === other)
             return true
-        if (other === null || other !is User)
+        if (other === null || other !is MyUser)
             return false
         if (this::class != other::class)
             return false

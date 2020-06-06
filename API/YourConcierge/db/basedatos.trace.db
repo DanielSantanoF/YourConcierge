@@ -1,8 +1,0 @@
-2020-05-31 21:20:11 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "OAUTH_CLIENT_DETAILS" no encontrada
-Table "OAUTH_CLIENT_DETAILS" not found; SQL statement:
-select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ? [42102-200]
-2020-05-31 21:21:43 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "OAUTH_CLIENT_DETAILS" no encontrada
-Table "OAUTH_CLIENT_DETAILS" not found; SQL statement:
-select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ? [42102-200]

@@ -14,6 +14,6 @@ class UserDetailsServiceImpl(
 
     override fun loadUserByUsername(username: String): UserDetails =
             userService.findByUsername(username).orElseThrow {
-                    UsernameNotFoundException("User $username Not Found")
+                UsernameNotFoundException("User $username not found")
             }
 }

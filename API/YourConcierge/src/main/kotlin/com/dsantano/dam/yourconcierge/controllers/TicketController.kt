@@ -5,7 +5,7 @@ import com.dsantano.dam.yourconcierge.dtos.TicketDto
 import com.dsantano.dam.yourconcierge.dtos.UpdateTicketDTO
 import com.dsantano.dam.yourconcierge.dtos.toTicketDTO
 import com.dsantano.dam.yourconcierge.entities.Ticket
-import com.dsantano.dam.yourconcierge.entities.User
+import com.dsantano.dam.yourconcierge.entities.MyUser
 import com.dsantano.dam.yourconcierge.repositories.TicketRepository
 import com.dsantano.dam.yourconcierge.services.TicketService
 import org.springframework.http.HttpStatus
@@ -33,13 +33,13 @@ class TicketController(
     }
 
     @GetMapping("/mytickets")
-    fun getAllUserTickets( @AuthenticationPrincipal user : User): List<TicketDto> {
-        return repo.findAllTicketsByUser( user ).map { it.toTicketDTO() }
+    fun getAllUserTickets( @AuthenticationPrincipal myUser : MyUser): List<TicketDto> {
+        return repo.findAllTicketsByUser( myUser ).map { it.toTicketDTO() }
     }
 
     @PostMapping("/new")
-    fun newTicket(@AuthenticationPrincipal user : User, @RequestBody newticket: CreateTicketDTO) : Optional<Ticket> {
-        return service.create(newticket, user)
+    fun newTicket(@AuthenticationPrincipal myUser : MyUser, @RequestBody newticket: CreateTicketDTO) : Optional<Ticket> {
+        return service.create(newticket, myUser)
     }
 
     @PutMapping("/{id}")

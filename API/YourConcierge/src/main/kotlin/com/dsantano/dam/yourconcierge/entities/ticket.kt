@@ -21,7 +21,7 @@ data class Ticket(
         var open: Boolean? = null,
         @JsonBackReference
         @ManyToOne
-        var user: User? = null,
+        var myUser: MyUser? = null,
         @CreatedDate
         @Column(name = "created_date", nullable = false, updatable = false)
         var createdAt: LocalDate? = null,

@@ -2,7 +2,7 @@ package com.dsantano.dam.yourconcierge.controllers
 
 import com.dsantano.dam.yourconcierge.dtos.*
 import com.dsantano.dam.yourconcierge.entities.ComunityServices
-import com.dsantano.dam.yourconcierge.entities.User
+import com.dsantano.dam.yourconcierge.entities.MyUser
 import com.dsantano.dam.yourconcierge.repositories.ComunityServicesRepository
 import com.dsantano.dam.yourconcierge.services.ComunityServicesService
 import org.springframework.http.HttpStatus
@@ -41,8 +41,8 @@ class ComunityServicesController(
     }
 
     @GetMapping("/mycomunityservices")
-    fun getMyUserCommunityServices( @AuthenticationPrincipal user : User): ComunityServicesDto {
-        return repo.findAllComunitySericesByUser( user ).toComunityServiceDTO()
+    fun getMyUserCommunityServices( @AuthenticationPrincipal myUser : MyUser): ComunityServicesDto {
+        return repo.findAllComunitySericesByUser( myUser ).toComunityServiceDTO()
     }
 
     @GetMapping("/byuser/{id}")

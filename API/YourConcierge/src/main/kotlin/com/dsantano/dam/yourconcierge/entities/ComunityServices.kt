@@ -12,6 +12,6 @@ data class ComunityServices(
         var cleanFloor: Boolean,
         @JsonBackReference
         @OneToOne
-        var user: User? = null,
+        var myUser: MyUser? = null,
         @Id @GeneratedValue val id: UUID? = null
 )

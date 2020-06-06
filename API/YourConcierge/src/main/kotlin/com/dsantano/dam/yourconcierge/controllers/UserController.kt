@@ -1,8 +1,7 @@
 package com.dsantano.dam.yourconcierge.controllers
 
 import com.dsantano.dam.yourconcierge.dtos.*
-import com.dsantano.dam.yourconcierge.entities.Ticket
-import com.dsantano.dam.yourconcierge.entities.User
+import com.dsantano.dam.yourconcierge.entities.MyUser
 import com.dsantano.dam.yourconcierge.repositories.UserRepository
 import com.dsantano.dam.yourconcierge.services.UserService
 import org.springframework.http.HttpStatus
@@ -29,15 +28,11 @@ class UserController(
                 ResponseStatusException(HttpStatus.BAD_REQUEST, "Username: ${newUser.username} already exists")
             }
 
-    @PreAuthorize("isAuthenticated()")
-    @GetMapping("/me")
-    fun me(@AuthenticationPrincipal user : User) = user.toUserDTO()
-
     @PutMapping("/{id}")
-    fun updateUser(@RequestBody updateUser: User, @PathVariable id : UUID) : UserDTO {
+    fun updateUser(@RequestBody updateMyUser: MyUser, @PathVariable id : UUID) : UserDTO {
         return repo.findById( id ).map { it ->
-            val userUpdated : User = it.copy( username = updateUser.username, password = encoder.encode(updateUser.password), fullName = updateUser.fullName)
-            repo.save(userUpdated).toUserDTO()
+            val myUserUpdated : MyUser = it.copy( username = updateMyUser.username, password = encoder.encode(updateMyUser.password), fullName = updateMyUser.fullName)
+            repo.save(myUserUpdated).toUserDTO()
         }.orElseThrow() {
             ResponseStatusException( HttpStatus.NOT_FOUND, "Not results found" )
         }
