@@ -3,7 +3,9 @@ Proyecto de api y aplicación móvil Android ambos en Kotlin para la gestión de
 
 #### El proyecto cuenta con 2 partes:
 
-* ApiRest: En este caso se ha realizado en Spring con IntelliJ IDEA
+* ApiRest: En este caso se ha realizado en Spring con IntelliJ IDEA, [Ver](https://github.com/DanielSantanoF/YourConcierge/tree/master/API/YourConcierge)
+
+* Aplicación de android: en Kotlin, [Ver]()
 
 ***
 

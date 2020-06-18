@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"user1\",\n\t\"fullName\": \"FullnameUser1\",\n\t\"password\": \"123456\",\n\t\"password2\": \"123456\"\n}",
+							"raw": "{\n\t\"username\": \"user1\",\n\t\"fullName\": \"FullnameUser1\",\n\t\"floor\": \"1º\",\n\t\"number\": \"A\",\n\t\"password\": \"123456\",\n\t\"password2\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,6 +124,36 @@
 							"path": [
 								"user",
 								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NGU3Y2JhZS05ZDEyLTRkMGEtYWIzZC05NDI0YWMyMjAzNGIiLCJleHAiOjE1OTI3NTUyNjksImlhdCI6MTU5MjQ5NjA2OSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiYWRtaW5uYW1lRnVsbE5hbWUiLCJyb2xlcyI6IkFETUlOIn0.dgxwcNV0DPDznWhNvV6cUPvFVh-Bh9B9GOMcVA8ej1tIPDvJ79YRpbBecla9yKX0kR5aZ2m3JbZVqmQgqZm32A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/user/byid/94e7cbae-9d12-4d0a-ab3d-9424ac22034b",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"byid",
+								"94e7cbae-9d12-4d0a-ab3d-9424ac22034b"
 							]
 						}
 					},
@@ -408,7 +438,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2YmQzOTc5OC02YWMxLTRlOTUtOGU2My1kZGRlNGFiZWVjMzgiLCJleHAiOjE1OTI3Mjk0MTEsImlhdCI6MTU5MjQ3MDIxMSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoidXNlcm5hbWVGdWxsTmFtZSIsInJvbGVzIjoiVVNFUiJ9.A5Jy80SgfNGTsr_JsYait4AZxqLXl6RxPnwNoCBMi2vYzBEEb9HjHcxMikU-RFW491jO1zVSvGCell_VYRlK5w",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5NGU3Y2JhZS05ZDEyLTRkMGEtYWIzZC05NDI0YWMyMjAzNGIiLCJleHAiOjE1OTI3NTUyNjksImlhdCI6MTU5MjQ5NjA2OSwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiYWRtaW5uYW1lRnVsbE5hbWUiLCJyb2xlcyI6IkFETUlOIn0.dgxwcNV0DPDznWhNvV6cUPvFVh-Bh9B9GOMcVA8ej1tIPDvJ79YRpbBecla9yKX0kR5aZ2m3JbZVqmQgqZm32A",
 									"type": "string"
 								}
 							]
@@ -424,6 +454,35 @@
 							"path": [
 								"comunityservices",
 								"mycomunityservices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhNWVhYzY3ZC1mNTZhLTRjZDQtOTg0YS05YmNiMzZjZDcwM2IiLCJleHAiOjE1OTI3NTQxMjgsImlhdCI6MTU5MjQ5NDkyOCwicmVmcmVzaCI6ZmFsc2UsImZ1bGxuYW1lIjoiYWRtaW5uYW1lRnVsbE5hbWUiLCJyb2xlcyI6IkFETUlOIn0.D152N4nYZIzTIha0G0XTyEInDcqiyT41B498YzEcWH-PwTwAnNZKHajYgi5_QGi-HwKuoaG68yUTm-Pf2g95tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/comunityservices/all",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"comunityservices",
+								"all"
 							]
 						}
 					},

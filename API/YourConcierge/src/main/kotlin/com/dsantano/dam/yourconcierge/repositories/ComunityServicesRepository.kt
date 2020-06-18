@@ -14,4 +14,7 @@ interface ComunityServicesRepository : JpaRepository<ComunityServices, UUID> {
     @Query("select c from ComunityServices c where c.myUser.id = :id")
     fun findComunitySericesByUserId(id : UUID) : ComunityServices
 
+    @Query("select c from ComunityServices c where c.id = :id")
+    fun findComunitySericesById(id : UUID) : ComunityServices
+
 }

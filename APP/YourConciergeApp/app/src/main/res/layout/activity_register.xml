@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.register.RegisterActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextFullNameRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/editTextUsernameRegister"
+                app:layout_constraintStart_toStartOf="@+id/editTextUsernameRegister"
+                app:layout_constraintTop_toBottomOf="@+id/editTextUsernameRegister" />
+
+            <EditText
+                android:id="@+id/editTextUsernameRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="@string/hint_username"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextFloorRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/hint_floor"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/editTextFullNameRegister"
+                app:layout_constraintStart_toStartOf="@+id/editTextFullNameRegister"
+                app:layout_constraintTop_toBottomOf="@+id/editTextFullNameRegister" />
+
+            <EditText
+                android:id="@+id/editTextNumberRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/hint_number"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/editTextFloorRegister"
+                app:layout_constraintStart_toStartOf="@+id/editTextFloorRegister"
+                app:layout_constraintTop_toBottomOf="@+id/editTextFloorRegister" />
+
+            <EditText
+                android:id="@+id/editTextPasswordRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/editTextNumberRegister"
+                app:layout_constraintStart_toStartOf="@+id/editTextNumberRegister"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumberRegister" />
+
+            <EditText
+                android:id="@+id/editTextConfirmPasswordRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:ems="10"
+                android:hint="@string/hint_confirm_password"
+                android:inputType="textPassword"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editTextPasswordRegister"
+                app:layout_constraintStart_toStartOf="@+id/editTextPasswordRegister"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPasswordRegister" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonDoRegister"
+        android:layout_width="0dp"
+        android:background="@drawable/round_white_bg"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/txt_register"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewRegister"
+        app:layout_constraintStart_toStartOf="@+id/cardViewRegister"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewRegister" />
+</androidx.constraintlayout.widget.ConstraintLayout>

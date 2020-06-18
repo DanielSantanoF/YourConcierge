@@ -1,6 +1,7 @@
 package com.dsantano.dam.yourconcierge.controllers
 
 import com.dsantano.dam.yourconcierge.dtos.*
+import com.dsantano.dam.yourconcierge.entities.ComunityServices
 import com.dsantano.dam.yourconcierge.entities.MyUser
 import com.dsantano.dam.yourconcierge.repositories.UserRepository
 import com.dsantano.dam.yourconcierge.services.UserService
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
 import java.util.*
 
-@Controller
+@RestController
 @RequestMapping("/user")
 class UserController(
         val userService: UserService,
@@ -27,6 +28,11 @@ class UserController(
             userService.create(newUser).map { ResponseEntity.status(HttpStatus.CREATED).body(it.toUserDTO()) }.orElseThrow {
                 ResponseStatusException(HttpStatus.BAD_REQUEST, "Username: ${newUser.username} already exists")
             }
+
+    @GetMapping("/byid/{id}")
+    fun getUserById(@PathVariable id : UUID) : UserDTO {
+        return repo.findUserById(id).toUserDTO()
+    }
 
     @PutMapping("/{id}")
     fun updateUser(@RequestBody updateMyUser: UpdateUserDTO, @PathVariable id : UUID) : UserDTO {

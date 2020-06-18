@@ -20,14 +20,21 @@ class ComunityServicesController(
         private val service: ComunityServicesService
 ) {
 
+    @GetMapping("/all")
+    fun getAllCommunityServices() : List<ComunityServicesDto> {
+        return repo.findAll().map {
+            it.toComunityServiceDTO()
+        }
+    }
+
     @PostMapping("/new")
     fun newCommunityService(@AuthenticationPrincipal myUser : MyUser, @RequestBody newComServ: CreateComunityServiceDTO) : Optional<ComunityServices> {
         return service.create(newComServ, myUser)
     }
     
     @GetMapping("/{id}")
-    fun getCommunityServiceById(@PathVariable id : UUID) : Optional<ComunityServices> {
-        return repo.findById(id)
+    fun getCommunityServiceById(@PathVariable id : UUID) : ComunityServicesDto {
+        return repo.findComunitySericesById(id).toComunityServiceDTO()
     }
 
     @PutMapping("/{id}")
