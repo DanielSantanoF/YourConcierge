@@ -17,7 +17,29 @@ Api Rest en Spring con Kotlin.
 
 ***
 
-#### Usar la Api Rest:
-* En local de la siguiente manera: 
+#### Datos de acceso:
+* role USER:
+```
+username: username
+password: 123456
+```
+* role ADMIN: 
+```
+username: admin
+password: 123456
+```
 
-    Abrir desde el ide de IntelliJ Idea el proyecto y arrancarlo desde la opción del ide, o bien ir a la ruta del api rest y ejecutar el comando de maven -> `mvn spring-boot:run`
+***
+
+#### Usar la Api Rest:
+* En local con h2 de la siguiente manera: 
+
+    Abrir desde el ide de IntelliJ Idea el proyecto y arrancarlo desde la opción del ide, o bien ir a la ruta del api rest y ejecutar el comando de maven -> `mvn spring-boot:run`, de manera local con h2 puedes acceder a la base de datos desde la url `localhost:9000/h2-console` con usuario `sa` y sin contraseña como esta indicado en el application.properties del api rest
+
+* En local con Postgresql de la siguiente manera:
+
+    Abrir desde el ide de IntelliJ Idea el proyecto y arrancarlo desde la opción del ide, o bien ir a la ruta del api rest y ejecutar el comando de maven -> `mvn spring-boot:run`, y debes ejecutar el comando `docker-compose up -d` para levantar el contenedor de docker de postgresql con el fichero docker-compose.yml que se encuentra en la raiz del api rest
+
+* De manera remota:
+
+    El api rest se encuentra desplegada en [Heroku](https://www.heroku.com/) en la url `https://yourconcierge.herokuapp.com/`

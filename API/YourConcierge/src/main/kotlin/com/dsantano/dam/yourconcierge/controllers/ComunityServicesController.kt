@@ -3,6 +3,7 @@ package com.dsantano.dam.yourconcierge.controllers
 import com.dsantano.dam.yourconcierge.dtos.*
 import com.dsantano.dam.yourconcierge.entities.ComunityServices
 import com.dsantano.dam.yourconcierge.entities.MyUser
+import com.dsantano.dam.yourconcierge.entities.Ticket
 import com.dsantano.dam.yourconcierge.repositories.ComunityServicesRepository
 import com.dsantano.dam.yourconcierge.services.ComunityServicesService
 import org.springframework.http.HttpStatus
@@ -19,6 +20,11 @@ class ComunityServicesController(
         private val service: ComunityServicesService
 ) {
 
+    @PostMapping("/new")
+    fun newCommunityService(@AuthenticationPrincipal myUser : MyUser, @RequestBody newComServ: CreateComunityServiceDTO) : Optional<ComunityServices> {
+        return service.create(newComServ, myUser)
+    }
+    
     @GetMapping("/{id}")
     fun getCommunityServiceById(@PathVariable id : UUID) : Optional<ComunityServices> {
         return repo.findById(id)

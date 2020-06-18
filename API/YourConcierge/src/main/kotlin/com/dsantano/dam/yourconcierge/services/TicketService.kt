@@ -16,7 +16,7 @@ class TicketService(
     fun create(newTicket: CreateTicketDTO, myUser: MyUser): Optional<Ticket> {
         return Optional.of(
                 with(newTicket) {
-                    repo.save(Ticket(description, description, urgent, true, myUser))
+                    repo.save(Ticket(incidence, description, urgent, true, myUser))
                 }
         )
     }

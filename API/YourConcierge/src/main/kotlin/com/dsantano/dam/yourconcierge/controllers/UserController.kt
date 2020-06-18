@@ -29,9 +29,9 @@ class UserController(
             }
 
     @PutMapping("/{id}")
-    fun updateUser(@RequestBody updateMyUser: MyUser, @PathVariable id : UUID) : UserDTO {
+    fun updateUser(@RequestBody updateMyUser: UpdateUserDTO, @PathVariable id : UUID) : UserDTO {
         return repo.findById( id ).map { it ->
-            val myUserUpdated : MyUser = it.copy( username = updateMyUser.username, password = encoder.encode(updateMyUser.password), fullName = updateMyUser.fullName)
+            val myUserUpdated : MyUser = it.copy( username = updateMyUser.username, password = encoder.encode(updateMyUser.password), fullName = updateMyUser.fullName, floor = updateMyUser.floor, number = updateMyUser.number)
             repo.save(myUserUpdated).toUserDTO()
         }.orElseThrow() {
             ResponseStatusException( HttpStatus.NOT_FOUND, "Not results found" )

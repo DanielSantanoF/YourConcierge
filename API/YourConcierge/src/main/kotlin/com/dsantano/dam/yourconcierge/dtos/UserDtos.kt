@@ -22,3 +22,11 @@ data class CreateUserDTO(
         val password: String,
         val password2: String
 )
+
+data class UpdateUserDTO(
+        var username: String,
+        var fullName: String,
+        var floor: String,
+        var number: String,
+        val password: String
+)

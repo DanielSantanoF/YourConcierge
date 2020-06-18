@@ -20,8 +20,8 @@ class InitDataComponent(
 
     @PostConstruct
     fun initData() {
-        val userUser = MyUser("username", encoder.encode("123456"), "usernameFullName","1º", "A", mutableSetOf("USER"))
-        val userAdmin = MyUser("admin", encoder.encode("123456"), "adminnameFullName","2º", "C/D", mutableSetOf("ADMIN"))
+        val userUser = MyUser("username", encoder.encode("123456"), "usernameFullName","USER", "1º", "A")
+        val userAdmin = MyUser("admin", encoder.encode("123456"), "adminnameFullName","ADMIN", "2º", "C/D   ")
         userRepository.save(userUser)
         userRepository.save(userAdmin)
 
