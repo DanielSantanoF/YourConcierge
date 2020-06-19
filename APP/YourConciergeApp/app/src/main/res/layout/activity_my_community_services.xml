@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="32dp"
+    tools:context=".ui.profile.MyCommunityServicesActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBarCommunityServices"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewComServ"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewWelcomeToComServ"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewTrashUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTrash"
+                app:layout_constraintStart_toStartOf="@+id/textViewTrash"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTrash"
+                app:srcCompat="@drawable/ic_delete_green_24dp" />
+
+            <ImageView
+                android:id="@+id/imageViewCleanFloorUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCleanFloor"
+                app:layout_constraintStart_toStartOf="@+id/textViewCleanFloor"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCleanFloor"
+                app:srcCompat="@drawable/ic_power_input_black_24dp" />
+
+            <TextView
+                android:id="@+id/textViewTrash"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewWelcomeToComServ"
+                app:layout_constraintStart_toStartOf="@+id/textViewWelcomeToComServ"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWelcomeToComServ" />
+
+            <TextView
+                android:id="@+id/textViewCleanFloor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTrash"
+                app:layout_constraintStart_toStartOf="@+id/textViewTrash"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTrash" />
+
+            <ImageView
+                android:id="@+id/imageViewTrashDown"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTrash"
+                app:layout_constraintStart_toStartOf="@+id/textViewTrash"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTrash"
+                app:srcCompat="@drawable/ic_delete_forever_red_24dp" />
+
+            <ImageView
+                android:id="@+id/imageViewCleanFloorDown"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCleanFloor"
+                app:layout_constraintStart_toStartOf="@+id/textViewCleanFloor"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCleanFloor"
+                app:srcCompat="@drawable/ic_power_input_red_24dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

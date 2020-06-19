@@ -35,13 +35,13 @@ class LoginActivity : AppCompatActivity() {
 
         val token: String? = MySharedPreferencesManager().getSharedPreferences().getString(Constants.SHAREDPREF_AUTH_TOKEN, "")
 
-        if (!token.isNullOrEmpty()) {
+        /*if (!token.isNullOrEmpty()) {
             val doLogin: Intent = Intent(MyApp.instance, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }
             startActivity(doLogin)
             finish()
-        }
+        }*/
 
         buttonDoLogin.setOnClickListener{ v ->
             authViewModel.doLogin(SendToLogin(editTextUsernameLogin.text.toString(), editTextPasswordLogin.text.toString()))

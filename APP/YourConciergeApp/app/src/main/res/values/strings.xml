@@ -8,4 +8,22 @@
     <string name="hint_fullname">Full Name</string>
     <string name="hint_floor">Floor</string>
     <string name="hint_number">Number</string>
+    <string name="txt_all_my_tickets">My tickets</string>
+    <string name="txt_all_tickets">All Tickets</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_community_services">Community Services</string>
+    <string name="txt_edit_ticket">Edit Ticket</string>
+    <string name="txt_delete_ticket">Delete Ticket</string>
+    <string name="txt_new_ticket">New ticket</string>
+    <string name="txt_incidence">Incidence</string>
+    <string name="txt_description">Description</string>
+    <string name="txt_is_urgent">Is urgent?</string>
+    <string name="txt_urgent">Urgent!!</string>
+    <string name="txt_done">Done</string>
+    <string name="txt_logout">Log Out</string>
+    <string name="txt_edit_profile">Edit profile</string>
+    <string name="txt_edit_com_serv">Edit Community Services</string>
+    <string name="txt_trash_bags">You have trash bags?</string>
+    <string name="txt_clean_floor">Your floor needs to be cleneased?</string>
+    <string name="txt_all_com_serv">All Community Services</string>
 </resources>

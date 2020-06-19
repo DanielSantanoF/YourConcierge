@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_account_circle_white_24dp"
+        android:title="@string/txt_profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/new_ticket"
+        android:title="@string/txt_new_ticket" />
+    <item
+        android:id="@+id/community_services"
+        android:title="@string/txt_community_services" />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/txt_logout" />
+
+</menu>
